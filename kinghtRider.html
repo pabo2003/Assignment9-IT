@@ -104,6 +104,7 @@
 
   $("#start").on('click',function () {
     audio.play();
+    audio.loop = true;
     intervalID = setInterval(updateLight,150);
   });
   $("#stop").on('click',function () {
