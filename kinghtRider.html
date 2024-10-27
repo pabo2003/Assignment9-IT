@@ -76,6 +76,7 @@
   let current_light = -1;//dan paththu wen light ek
   let direction = "RIGHT"  //RIGHT or LEFT(right side ekata ynw nm right,left side ekt yanw nm left)
   let intervalID = null;
+  let audio = new Audio('Audio/WhatsApp Audio 2024-10-27 at 22.33.42.mpga');
 
   updateLight = () =>{
     if (direction === "RIGHT") {
@@ -102,9 +103,11 @@
 
 
   $("#start").on('click',function () {
+    audio.play();
     intervalID = setInterval(updateLight,150);
   });
   $("#stop").on('click',function () {
+    audio.pause();
     clearInterval(intervalID);
   });
 
